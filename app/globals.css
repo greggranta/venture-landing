@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors */
+  --color-magenta: #fd4fe9;
+  --color-magenta-dim: #c83ebc;
+  --color-mint: #8efeba;
+  --color-navy: #1a1d3a;
+
+  /* Page surfaces */
+  --color-bg: #07091a;
+  --color-surface: #0d1025;
+  --color-card: #111428;
+  --color-border: #ffffff14;
+
+  /* Fonts */
+  --font-headline: var(--font-squada-one);
+  --font-body: var(--font-jakarta);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #07091a;
+  color: #e8eaff;
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+}
+
+/* City grid texture — used on cards and hero overlay */
+.city-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.city-grid-subtle {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Magenta glow on buttons */
+.glow-magenta {
+  box-shadow: 0 0 32px rgba(253, 79, 233, 0.35), 0 0 8px rgba(253, 79, 233, 0.2);
+}
+.glow-magenta:hover {
+  box-shadow: 0 0 48px rgba(253, 79, 233, 0.5), 0 0 16px rgba(253, 79, 233, 0.3);
+}
+
+/* Fade-up animation for sections */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease both;
+}
+
+/* Soft pulse for the live indicator */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 2.4s ease-in-out infinite;
+}

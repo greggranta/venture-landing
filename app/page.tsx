@@ -5,7 +5,7 @@ const steps = [
     number: "01",
     heading: "Post what you're up to.",
     body: "Coffee. Gym. Study session. Whatever you're doing now or in the next two hours — post it and see who's in.",
-    chips: ["☕ Coffee", "🏋️ Gym", "📚 Study", "🎵 Concert"],
+    chips: ["☕ Coffee", "🏋️ Gym", "📚 Study"],
   },
   {
     number: "02",
@@ -66,16 +66,16 @@ export default function Home() {
           Venture
         </span>
         <a
-          href="#waitlist"
+          href="#invite"
           className="hidden sm:inline-flex items-center gap-2 rounded-full bg-magenta px-5 py-2 text-[13px] font-bold text-bg tracking-wide glow-magenta transition-all hover:scale-[1.03]"
         >
-          Get Early Access
+          Get the invite
         </a>
         <a
-          href="#waitlist"
+          href="#invite"
           className="sm:hidden text-[13px] font-semibold text-magenta"
         >
-          Join →
+          Invite →
         </a>
       </header>
 
@@ -109,12 +109,6 @@ export default function Home() {
           />
 
           <div className="relative z-10 flex flex-col items-center gap-8 max-w-4xl animate-fade-up">
-            {/* Live badge */}
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.12em] text-[#c0c4e0]">
-              <span className="h-1.5 w-1.5 rounded-full bg-mint animate-pulse-slow" />
-              Spring 2026 Beta · Columbia College Chicago
-            </div>
-
             {/* Headline */}
             <h1 className="font-headline text-[clamp(64px,12vw,128px)] leading-[0.9] tracking-tight text-white">
               Don&rsquo;t plan it.
@@ -134,17 +128,21 @@ export default function Home() {
 
             {/* Sub */}
             <p className="max-w-xl text-[17px] leading-relaxed text-[#9399c0] font-medium">
-              Real-time spontaneous meetups with verified students nearby.
-              The goal isn&rsquo;t to keep you on the app&nbsp;—&nbsp;it&rsquo;s to get you off it.
+              Show up. Meet people. Repeat. Curated sessions at real Chicago spots.
             </p>
 
             {/* CTA */}
             <div className="flex flex-col items-center gap-4 mt-2">
+              {/* Beta badge */}
+              <div className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.12em] text-[#c0c4e0]">
+                <span className="h-1.5 w-1.5 rounded-full bg-mint animate-pulse-slow" />
+                Beta live · Chicago · .edu only
+              </div>
               <a
-                href="#waitlist"
+                href="#invite"
                 className="inline-flex items-center gap-3 rounded-full bg-magenta px-9 py-4 text-[15px] font-bold text-bg tracking-wide glow-magenta transition-all hover:scale-[1.03]"
               >
-                Get Early Access
+                Get the invite
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                 </svg>
@@ -153,26 +151,50 @@ export default function Home() {
                 .edu email required · Free forever during beta
               </span>
             </div>
+          </div>
+        </section>
 
-            {/* Social proof */}
-            <div className="mt-4 flex items-center gap-2 text-[13px] text-[#5a6090]">
-              <span className="inline-flex">
-                {["A","B","C","D"].map((_, i) => (
-                  <span
-                    key={i}
-                    className="h-7 w-7 rounded-full border-2 border-bg flex items-center justify-center text-[10px] font-bold -ml-2 first:ml-0"
-                    style={{
-                      background: [
-                        "linear-gradient(135deg,#fd4fe9,#9b4fdd)",
-                        "linear-gradient(135deg,#8efeba,#3cb87a)",
-                        "linear-gradient(135deg,#4f8bfd,#7b4ffd)",
-                        "linear-gradient(135deg,#fd9b4f,#fd4fe9)",
-                      ][i],
-                    }}
-                  />
-                ))}
-              </span>
-              <span>47+ Columbia students already on the waitlist</span>
+        {/* ─── INVITE ──────────────────────────────────────────────── */}
+        <section id="invite" className="border-t border-border px-6 lg:px-10 py-28">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+              {/* Left: copy */}
+              <div className="flex flex-col gap-6 lg:sticky lg:top-24">
+                <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-mint">
+                  Early access
+                </span>
+                <h2 className="font-headline text-[clamp(40px,6vw,72px)] leading-[0.95] text-white">
+                  Your campus.
+                  <br />
+                  Your moment.
+                </h2>
+                <p className="text-[15px] text-[#7880a8] leading-relaxed max-w-sm">
+                  The beta is live at Columbia College Chicago. Get the invite and be among the first students on the ground floor.
+                </p>
+                <div className="flex flex-col gap-3 mt-4">
+                  {[
+                    "No ticket purchases",
+                    "No endless swiping",
+                    "No passive scrolling",
+                    "Just real people, right now",
+                  ].map((item) => (
+                    <div key={item} className="flex items-center gap-3 text-[14px] text-[#9399c0]">
+                      <svg className="w-4 h-4 text-mint flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right: form */}
+              <div className="rounded-2xl border border-border bg-surface overflow-hidden">
+                <div className="city-grid h-2 w-full bg-navy" />
+                <div className="p-8 sm:p-10">
+                  <WaitlistForm />
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -364,55 +386,10 @@ export default function Home() {
             {/* Mission statement */}
             <div className="rounded-2xl border border-magenta/20 bg-magenta/5 p-10 sm:p-12 text-center flex flex-col gap-4">
               <p className="text-[19px] sm:text-[22px] font-semibold text-white leading-relaxed max-w-2xl mx-auto">
-                "Venture is about what happens{" "}
-                <span className="text-magenta">after you close the app.</span>"
+                &ldquo;Venture is about what happens{" "}
+                <span className="text-magenta">after you close the app.</span>&rdquo;
               </p>
               <span className="text-[13px] text-[#5a6090]">— From the Venture mission</span>
-            </div>
-          </div>
-        </section>
-
-        {/* ─── WAITLIST ────────────────────────────────────────────── */}
-        <section id="waitlist" className="border-t border-border px-6 lg:px-10 py-28">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-              {/* Left: copy */}
-              <div className="flex flex-col gap-6 lg:sticky lg:top-24">
-                <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-mint">
-                  Early access
-                </span>
-                <h2 className="font-headline text-[clamp(40px,6vw,72px)] leading-[0.95] text-white">
-                  Your campus.
-                  <br />
-                  Your moment.
-                </h2>
-                <p className="text-[15px] text-[#7880a8] leading-relaxed max-w-sm">
-                  The beta starts at Columbia College Chicago. Join the waitlist and be among the first students to experience Venture when it opens on your campus.
-                </p>
-                <div className="flex flex-col gap-3 mt-4">
-                  {[
-                    "No ticket purchases",
-                    "No endless swiping",
-                    "No passive scrolling",
-                    "Just real people, right now",
-                  ].map((item) => (
-                    <div key={item} className="flex items-center gap-3 text-[14px] text-[#9399c0]">
-                      <svg className="w-4 h-4 text-mint flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Right: form */}
-              <div className="rounded-2xl border border-border bg-surface overflow-hidden">
-                <div className="city-grid h-2 w-full bg-navy" />
-                <div className="p-8 sm:p-10">
-                  <WaitlistForm />
-                </div>
-              </div>
             </div>
           </div>
         </section>

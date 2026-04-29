@@ -163,7 +163,7 @@ export default function WaitlistForm() {
         className="mt-2 h-13 w-full rounded-xl font-bold text-[14px] tracking-wide text-bg disabled:opacity-50 transition-all hover:scale-[1.02] glow-magenta cursor-pointer"
         style={{ background: loading ? "#a038a0" : "#fd4fe9" }}
       >
-        {loading ? "Joining the waitlist…" : "Get Early Access →"}
+        {loading ? "Getting your invite…" : "Get the invite →"}
       </button>
 
       <p className="text-center text-[11px] text-[#30355a]">

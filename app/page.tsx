@@ -350,6 +350,71 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ─── CAMPUSES ────────────────────────────────────────────── */}
+        <section className="border-t border-border px-6 lg:px-10 py-28">
+          <div className="max-w-5xl mx-auto flex flex-col gap-12">
+            <div className="flex flex-col gap-3 max-w-lg">
+              <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-mint">
+                Chicago footprint
+              </span>
+              <h2 className="font-headline text-[clamp(40px,6vw,72px)] leading-[0.95] text-white">
+                Built for Chicago students.
+              </h2>
+              <p className="text-[15px] text-[#7880a8] leading-relaxed">
+                Launching at Columbia College Chicago. Coming soon to DePaul,
+                Loyola, Northwestern, and UIC.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+              {[
+                { name: "Columbia College Chicago",       abbr: "Columbia",     live: true  },
+                { name: "DePaul University",              abbr: "DePaul",       live: false },
+                { name: "Loyola University Chicago",      abbr: "Loyola",       live: false },
+                { name: "Northwestern University",        abbr: "Northwestern", live: false },
+                { name: "University of Illinois Chicago", abbr: "UIC",          live: false },
+              ].map((school) => (
+                <div
+                  key={school.name}
+                  className="flex flex-col items-center gap-4 rounded-2xl border bg-surface p-6 text-center"
+                  style={{ borderColor: school.live ? "rgba(142,254,186,0.2)" : "rgba(255,255,255,0.06)" }}
+                >
+                  {/* Wordmark pill */}
+                  <div
+                    className="w-full rounded-lg px-3 py-2 flex items-center justify-center text-[11px] font-bold tracking-wide"
+                    style={{
+                      background: school.live ? "rgba(142,254,186,0.12)" : "rgba(255,255,255,0.04)",
+                      color: school.live ? "#8efeba" : "#3a3f6a",
+                    }}
+                  >
+                    {school.abbr}
+                  </div>
+
+                  {/* School name */}
+                  <span
+                    className="text-[12px] font-semibold leading-snug flex-1"
+                    style={{ color: school.live ? "#c0c4e0" : "#4a4f7a" }}
+                  >
+                    {school.name}
+                  </span>
+
+                  {/* Status pill — mt-auto pins it to tile bottom regardless of name wrap */}
+                  {school.live ? (
+                    <span className="mt-auto inline-flex items-center gap-1.5 rounded-full bg-mint/10 border border-mint/25 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-mint">
+                      <span className="h-1.5 w-1.5 rounded-full bg-mint animate-pulse-slow" />
+                      Live
+                    </span>
+                  ) : (
+                    <span className="mt-auto inline-flex items-center rounded-full bg-white/4 border border-white/8 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#3a3f6a]">
+                      Coming soon
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ─── BUILT FOR TRUST ─────────────────────────────────────── */}
         <section className="border-t border-border px-6 lg:px-10 py-28">
           <div className="max-w-5xl mx-auto flex flex-col gap-16">

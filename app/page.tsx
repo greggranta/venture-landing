@@ -3,8 +3,8 @@ import WaitlistForm from "./components/WaitlistForm";
 const steps = [
   {
     number: "01",
-    heading: "Post what you're up to.",
-    body: "Coffee. Gym. Study session. Whatever you're doing now or in the next two hours — post it and see who's in.",
+    heading: "Start a session.",
+    body: "Coffee. Gym. Study session. Whatever you're doing now or in the next two hours — start a session and see who's in.",
     chips: ["☕ Coffee", "🏋️ Gym", "📚 Study"],
   },
   {
@@ -53,7 +53,7 @@ const trust = [
   },
   {
     heading: "Real-Time Only",
-    body: "Activities expire within 2 hours. No lingering posts. No passive scrolling. Just live moments.",
+    body: "Sessions expire within 2 hours. No passive scrolling. Just live moments.",
   },
 ];
 
@@ -230,18 +230,15 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Pull quote */}
+              {/* Founder's note */}
               <div className="flex flex-col gap-6 lg:pl-10 lg:border-l border-border">
-                <svg className="w-8 h-8 text-magenta opacity-60" fill="currentColor" viewBox="0 0 32 32">
-                  <path d="M0 16.8c0-6.4 4.267-12.267 12.8-17.6l2.4 2.933C10.667 4.8 8.267 8.267 7.467 12H12v12H0V16.8zm17.6 0c0-6.4 4.267-12.267 12.8-17.6L32.8 2.133C28.267 4.8 25.867 8.267 25.067 12H29.6v12H17.6V16.8z" />
-                </svg>
-                <blockquote className="text-[22px] sm:text-[26px] leading-snug font-semibold text-white">
+                <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-mint">
+                  Founder&rsquo;s note
+                </span>
+                <p className="text-[22px] sm:text-[26px] leading-snug font-semibold text-white">
                   Real life doesn&rsquo;t work on a schedule. Your afternoon frees up, you feel like being social, and there&rsquo;s no simple way to find someone else who&rsquo;s in that same moment.
-                </blockquote>
-                <div className="flex flex-col gap-0.5">
-                  <span className="text-[14px] font-semibold text-[#c0c4e0]">Grant Gregga</span>
-                  <span className="text-[13px] text-[#5a6090]">Founder, Venture</span>
-                </div>
+                </p>
+                <span className="text-[14px] font-semibold text-[#c0c4e0]">Grant Gregga</span>
               </div>
             </div>
           </div>

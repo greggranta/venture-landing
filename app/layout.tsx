@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Venture — Don't plan it. Venture it.",
     description:
-      "Real-time campus meetups with verified students nearby. Join the early access waitlist.",
+      "Real-time campus meetups with verified students nearby. Beta live in Chicago. .edu only.",
     type: "website",
   },
 };
